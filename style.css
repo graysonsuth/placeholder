@@ -106,3 +106,27 @@ body.homepage {
     justify-content: center;
     height: 100vh;
 }
+
+.tag {
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: #e0e0e0;
+    color: #333;
+}
+.tag.current {
+    background: #b7e7c2;
+    color: #185c2b;
+}
+.tag.previous {
+    background: #e7d1b7;
+    color: #7a4a13;
+}
+.role-tags {
+    margin-bottom: 4px;
+}
