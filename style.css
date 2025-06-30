@@ -1,15 +1,25 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* Remove these lines for the work page: */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
     margin: 0;
     background-color: #D9D9D9;
     font-family: 'Instrument Serif', serif;
 }
 
 .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 24px;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 32px 16px; /* Wider padding on mobile */
+    }
 }
 
 .links {
@@ -28,4 +38,71 @@ a:visited,
 a:hover,
 a:active {
     color: #000000; /* Ensure all link states have the same color */
+}
+
+.container.main-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: center; /* Center grid items horizontally */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    gap: 32px;
+    text-align: center; /* Add this line to center text in the grid */
+}
+
+.main-content {
+    width: auto;
+    text-align: center; /* Center all text inside */
+}
+
+.arrow-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.arrow {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.15s;
+    display: inline-block;
+}
+
+.arrow:hover {
+    transform: translateX(8px);
+}
+
+@media (max-width: 600px) {
+    .container.main-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 32px 16px;
+        gap: 0;
+    }
+    .main-content {
+        width: 100%;
+        text-align: center;
+    }
+    .arrow-link {
+        margin-top: 32px;
+        justify-content: center;
+        height: auto;
+    }
+    .arrow {
+        font-size: 2.5rem;
+    }
+}
+
+/* Only center the homepage vertically if .main-layout is present */
+body.homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
